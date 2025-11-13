@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文件粉碎机</title>
+    <link rel="stylesheet" href="src/styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>文件粉碎机</h1>
+            <p class="subtitle">按照美国国防部DoD 5220.22-M标准安全销毁您的文件</p>
+        </header>
+
+        <main>
+            <!-- 文件添加区域 -->
+            <section class="file-drop-section">
+                <div id="dropZone" class="drop-zone">
+                    <div class="drop-zone-content">
+                        <div class="drop-icon">📁</div>
+                        <p>拖拽文件或文件夹到此处</p>
+                        <p class="drop-hint">或者</p>
+                        <div class="button-group">
+                            <button id="addFilesBtn" class="btn btn-secondary">选择文件</button>
+                            <button id="addFoldersBtn" class="btn btn-secondary">选择文件夹</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 文件列表区域 -->
+            <section class="file-list-section">
+                <div class="section-header">
+                    <h2>待粉碎文件列表</h2>
+                    <button id="clearQueueBtn" class="btn btn-small btn-danger">清空列表</button>
+                </div>
+                <div id="fileListContainer" class="file-list-container">
+                    <table id="fileList" class="file-list">
+                        <thead>
+                            <tr>
+                                <th>文件名</th>
+                                <th>路径</th>
+                                <th>大小</th>
+                                <th>状态</th>
+                                <th>进度</th>
+                            </tr>
+                        </thead>
+                        <tbody id="fileListBody">
+                            <!-- 文件列表将在这里动态生成 -->
+                        </tbody>
+                    </table>
+                    <div id="emptyState" class="empty-state">
+                        <p>暂无文件</p>
+                        <p>请添加需要粉碎的文件或文件夹</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 操作按钮区域 -->
+            <section class="action-section">
+                <div class="action-buttons">
+                    <button id="startShreddingBtn" class="btn btn-primary btn-large" disabled>
+                        开始粉碎
+                    </button>
+                </div>
+            </section>
+
+            <!-- 进度显示区域 -->
+            <section id="progressSection" class="progress-section" style="display: none;">
+                <h2>粉碎进度</h2>
+                <div class="overall-progress">
+                    <div class="progress-bar-container">
+                        <div id="overallProgressBar" class="progress-bar"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="progressText">0%</span>
+                        <span id="currentFileText">准备中...</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 日志区域 -->
+            <section class="log-section">
+                <div class="section-header">
+                    <h2>操作日志</h2>
+                    <div class="log-controls">
+                        <select id="logTypeSelect" class="form-control">
+                            <option value="shredding">文件粉碎日志</option>
+                            <option value="app">应用程序日志</option>
+                        </select>
+                        <select id="logDateSelect" class="form-control" style="display: none;">
+                            <option value="">选择日期</option>
+                        </select>
+                        <button id="refreshLogsBtn" class="btn btn-small">刷新</button>
+                    </div>
+                </div>
+                <div id="logContainer" class="log-container">
+                    <!-- 日志内容将在这里动态生成 -->
+                </div>
+            </section>
+        </main>
+
+    <!-- 移除恢复对话框 -->
+    <!-- <div id="recoveryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>异常退出恢复</h3>
+            </div>
+            <div class="modal-body">
+                <p id="recoveryMessage"></p>
+            </div>
+            <div class="modal-footer">
+                <button id="recoverButton" class="btn btn-primary">恢复</button>
+                <button id="ignoreButton" class="btn btn-secondary">忽略</button>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- 页脚 -->
+    <footer>
+        <p>文件粉碎机 v1.0.0 | 按照美国国防部DoD 5220.22-M标准</p>
+    </footer>
+    </div>
+
+    <!-- 模态对话框 -->
+    <div id="confirmDialog" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>确认操作</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p id="confirmMessage">确定要执行此操作吗？</p>
+            </div>
+            <div class="modal-footer">
+                <button id="confirmCancel" class="btn btn-secondary">取消</button>
+                <button id="confirmOk" class="btn btn-danger">确定</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="src/renderer.js"></script>
+</body>
+</html>

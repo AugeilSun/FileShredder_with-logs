@@ -1,0 +1,8 @@
+# 这是一个占位文件，实际使用时应该替换为真正的.ico图标文件
+# 可以从以下地址获取免费图标：
+# https://www.iconfinder.com/
+# https://www.flaticon.com/
+# https://icons8.com/
+
+# 临时解决方案：使用Electron默认图标
+# 在生产环境中，请确保使用有效的.ico文件

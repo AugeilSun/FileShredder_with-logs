@@ -1,0 +1,59 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景圆形 -->
+  <circle cx="64" cy="64" r="60" fill="#6a4c93" stroke="#4a3563" stroke-width="2"/>
+  
+  <!-- 粉碎机主体 -->
+  <rect x="30" y="40" width="68" height="60" rx="8" fill="#9b7bb8" stroke="#6a4c93" stroke-width="2"/>
+  
+  <!-- 粉碎机顶部 -->
+  <rect x="25" y="35" width="78" height="15" rx="5" fill="#8a6aa7" stroke="#6a4c93" stroke-width="2"/>
+  
+  <!-- 粉碎机入口 -->
+  <rect x="45" y="25" width="38" height="15" rx="3" fill="#4a3563"/>
+  
+  <!-- 粉碎刀片 -->
+  <g transform="translate(64, 65)">
+    <!-- 中心圆 -->
+    <circle cx="0" cy="0" r="8" fill="#4a3563"/>
+    
+    <!-- 刀片1 -->
+    <rect x="-2" y="-25" width="4" height="50" rx="2" fill="#e6d7f7" transform="rotate(45)"/>
+    
+    <!-- 刀片2 -->
+    <rect x="-2" y="-25" width="4" height="50" rx="2" fill="#e6d7f7" transform="rotate(135)"/>
+    
+    <!-- 刀片3 -->
+    <rect x="-2" y="-25" width="4" height="50" rx="2" fill="#e6d7f7" transform="rotate(225)"/>
+    
+    <!-- 刀片4 -->
+    <rect x="-2" y="-25" width="4" height="50" rx="2" fill="#e6d7f7" transform="rotate(315)"/>
+  </g>
+  
+  <!-- 粉碎机底部出口 -->
+  <rect x="50" y="95" width="28" height="8" rx="2" fill="#4a3563"/>
+  
+  <!-- 粉碎碎片 -->
+  <g opacity="0.8">
+    <rect x="52" y="103" width="4" height="4" fill="#9b7bb8" transform="rotate(15 54 105)"/>
+    <rect x="60" y="105" width="3" height="3" fill="#8a6aa7" transform="rotate(30 61.5 106.5)"/>
+    <rect x="68" y="103" width="4" height="4" fill="#9b7bb8" transform="rotate(-20 70 105)"/>
+    <rect x="55" y="110" width="3" height="3" fill="#8a6aa7" transform="rotate(45 56.5 111.5)"/>
+    <rect x="65" y="110" width="3" height="3" fill="#8a6aa7" transform="rotate(-45 66.5 111.5)"/>
+  </g>
+  
+  <!-- 文件图标 -->
+  <g transform="translate(64, 15)">
+    <rect x="-8" y="-6" width="16" height="20" rx="2" fill="#ffffff" stroke="#6a4c93" stroke-width="1.5"/>
+    <path d="M2,-6 L2,-2 L8,-2" fill="#6a4c93"/>
+    <line x1="-4" y1="2" x2="4" y2="2" stroke="#6a4c93" stroke-width="1.5"/>
+    <line x1="-4" y1="6" x2="4" y2="6" stroke="#6a4c93" stroke-width="1.5"/>
+    <line x1="-4" y1="10" x2="2" y2="10" stroke="#6a4c93" stroke-width="1.5"/>
+  </g>
+  
+  <!-- 安全锁图标 -->
+  <g transform="translate(95, 95)">
+    <rect x="-6" y="-2" width="12" height="10" rx="2" fill="#ffffff" stroke="#6a4c93" stroke-width="1.5"/>
+    <path d="M-4,-2 L-4,-6 Q-4,-10 0,-10 Q4,-10 4,-6 L4,-2" fill="none" stroke="#6a4c93" stroke-width="1.5"/>
+    <circle cx="0" cy="3" r="2" fill="#6a4c93"/>
+  </g>
+</svg>
